@@ -11,7 +11,7 @@
 	<groupId>com.umbrellait</groupId>
 	<artifactId>docker-spring_boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>docker-spring_boot</name>
 	<description>Demo project for Spring Boot</description>
 
