@@ -2,6 +2,7 @@ package com.umbrellait.docker_spring_boot.model;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "message")
@@ -17,11 +18,11 @@ public class Message {
     private String text;
 
     @Column(name = "date")
-    private String date;
+    private LocalDateTime date;
 
     public Message() {}
 
-    public Message(String mеthod, String text, String date) {
+    public Message(String mеthod, String text, LocalDateTime date) {
         this.mеthod = mеthod;
         this.text = text;
         this.date = date;
@@ -51,11 +52,11 @@ public class Message {
         this.text = text;
     }
 
-    public String getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

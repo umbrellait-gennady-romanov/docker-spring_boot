@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MessageServiceImp implements MessageService {
@@ -19,12 +21,18 @@ public class MessageServiceImp implements MessageService {
 
     @Override
     @Transactional
-    public Message getById(long id) {
-        return messageRepository.getOne(id);
+    public void addMessage(Message message) {
+        messageRepository.save(message);
     }
 
     @Override
-    public List<Message> getByDateAnd3Char(String dateStart, String dateEnd, String search) {
-        return null;
+    @Transactional
+    public Optional<Message> getById(long id) {
+        return messageRepository.findById(id);
+    }
+
+    @Override
+    public List<Message> getMessageList(LocalDateTime startDate, LocalDateTime endDate, String search) {
+        return messageRepository.getMessageList(startDate, endDate, search);
     }
 }
