@@ -4,7 +4,7 @@ package com.umbrellait.docker_spring_boot.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Message")
+@Table(name = "message")
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,11 +16,15 @@ public class Message {
     @Column(name = "text")
     private String text;
 
+    @Column(name = "date")
+    private String date;
+
     public Message() {}
 
-    public Message(String mеthod, String text) {
+    public Message(String mеthod, String text, String date) {
         this.mеthod = mеthod;
         this.text = text;
+        this.date = date;
     }
 
     public long getId() {
@@ -45,6 +49,14 @@ public class Message {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     @Override

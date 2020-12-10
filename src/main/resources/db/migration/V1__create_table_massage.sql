@@ -2,7 +2,8 @@ CREATE TABLE IF NOT EXISTS `message` (
  
     `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `method` varchar(10),
-    `text` varchar(255)
+    `text` varchar(255),
+    'date' timestamp
 );
 
 INSERT INTO message (method, text) VALUES
